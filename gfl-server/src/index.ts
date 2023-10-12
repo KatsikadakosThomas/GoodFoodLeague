@@ -5,7 +5,7 @@ import express from 'express';
 import chalk from 'chalk';
 import cors from 'cors';
 import morgan from 'morgan'
-
+import helmet from "helmet"
 
 // Load environment variables
 // eslint-disable-next-line @typescript-eslint/no-var-requires
@@ -14,12 +14,7 @@ console.log(process.env.NODE_ENV);
 
 // Initiate DB connection
 console.log(chalk.green('[Database] ') + `Connecting to mongo instance ${process.env.CONNECTION_STRING}.`);
-mongoose.connect(process.env.CONNECTION_STRING as string, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    useCreateIndex: true,
-    useFindAndModify: false,
-})
+mongoose.connect(process.env.CONNECTION_STRING as string)
     .catch(err => {
         mongoose.connection.emit('error', err);
         process.exit(0);
@@ -43,10 +38,12 @@ app.use(morgan('tiny'))
 app.use(express.json({limit: '500mb'}));
 app.use(express.urlencoded({limit: '500mb',extended: true}));
 
-app.use(function (req, res, next) {
-    res.removeHeader("X-Powered-By");
-    next();
-  });
+app.use(helmet());
+
+// app.use(function (req, res, next) {
+//     res.removeHeader("X-Powered-By");
+//     next();
+//   });
 
 app.use(
     cors({
