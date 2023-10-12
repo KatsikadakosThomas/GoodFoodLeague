@@ -1,0 +1,134 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --background: #ffffff;
+  
+  }
+
+  html { scroll-behavior: smooth; } 
+
+  body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--background);
+    overflow-x: hidden;
+  }
+  .modalAnimation {
+    will-change: transform;
+    transform: translate3d(0px, -120%, 0px);
+    transition: transform 1s 0.3s;
+    transition-timing-function: ease-in;
+  }
+  
+  .modalAnimationClose {
+    transition: transform 1s;
+    transform: translate3d(0px, -0%, 0px);
+    transition-timing-function: ease-out;
+  
+  }
+  body.openModal {
+    overflow-y: hidden;
+    touch-action: none;
+  }
+
+
+  .line {
+    fill: none;
+    stroke: rgb(44, 44, 44);
+    stroke-width: 3;
+    transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
+      stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .line1 {
+    stroke-dasharray: 60 207;
+    stroke-width: 3;
+  }
+  .line2 {
+    stroke-dasharray: 60 60;
+    stroke-width: 3;
+  }
+  .line3 {
+    stroke-dasharray: 60 207;
+    stroke-width: 3;
+  }
+  .lineOpen1  {
+    stroke-dasharray: 90 207;
+    stroke-dashoffset: -134;
+    stroke-width: 3;
+  }
+  .lineOpen2  {
+    stroke-dasharray: 1 60;
+    stroke-dashoffset: -30;
+    stroke-width: 3;
+  }
+  .lineOpen3  {
+    stroke-dasharray: 90 207;
+    stroke-dashoffset: -134;
+    stroke-width: 3;
+  }
+  
+
+  /* MODAL ANIMATION each item is a seperate <a> */
+
+$number-of-classes: 5; // Set the number of classes you want to generate
+
+@for $i from 1 through $number-of-classes {
+
+  $base-delay: 0.8s; // Set the base delay value
+  $transform-delay: $base-delay - $i * 0.1s;
+
+
+
+  .item#{$i} {
+    // Your CSS rules for each generated class here
+    opacity: 100;
+    transform: translateY(0px);
+    transition: transform 0.4s #{$transform-delay}, opacity 0.5s 0.6s;
+    transition-timing-function: ease-out;
+  }
+}
+
+
+.item1.slide{  
+  opacity: 0;
+  transform: translateY(-80px);
+  transition: transform 0.5s  ,opacity 0.6s;
+  transition-timing-function: ease-in;
+}
+
+
+
+
+.item2.slide{  
+  opacity: 0;
+  transform: translateY(-80px);
+  transition: transform 0.5s 0.1s,opacity 0.6s;
+  transition-timing-function: ease-in;
+}
+
+
+
+.item3.slide{  
+  opacity: 0;
+  transform: translateY(-80px);
+  transition: transform 0.5s 0.2s,opacity 0.6s;
+  transition-timing-function: ease-in;
+}
+
+
+.item4.slide{  
+  opacity: 0;
+  transform: translateY(-80px);
+  transition: transform 0.5s 0.3s,opacity 0.6s;
+  transition-timing-function: ease-in;
+}
+
+
+.item5.slide{  
+  opacity: 0;
+  transform: translateY(-80px);
+  transition: transform 0.5s 0.4s,opacity 0.6s;
+  transition-timing-function: ease-in;
+}
