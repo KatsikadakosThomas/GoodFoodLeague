@@ -2,7 +2,7 @@ import { dbRequired, errorHandler } from "./middleware";
 import bodyParser from 'body-parser';
 import mongoose from 'mongoose';
 import express from 'express';
-import chalk from 'chalk';
+import chalk from 'chalk'
 import cors from 'cors';
 import morgan from 'morgan'
 import helmet from "helmet"
@@ -53,23 +53,23 @@ app.use(
     })
 );
 
-// Static files
-app.use(express.static('public'));
-app.use('/avatar', express.static('uploads/avatars')); // Deprecated
-app.use('/cv', express.static('uploads/cvs')); // Deprecated
+// // Static files
+// app.use(express.static('public'));
+// app.use('/avatar', express.static('uploads/avatars')); // Deprecated
+// app.use('/cv', express.static('uploads/cvs')); // Deprecated
 
 
-/* eslint-disable @typescript-eslint/no-var-requires */
-app.use('/auth', require('./routes/auth'));
+// /* eslint-disable @typescript-eslint/no-var-requires */
+// app.use('/auth', require('./routes/auth'));
 
-/* eslint-enable @typescript-eslint/no-var-requires */
+// /* eslint-enable @typescript-eslint/no-var-requires */
 
-//Admin routes
-const CategoriesRouter = require("./routes/admin/categories");
+// //Admin routes
+// const CategoriesRouter = require("./routes/admin/categories");
 
 
-//Use the Admin routes
-app.use(CategoriesRouter);
+// //Use the Admin routes
+// app.use(CategoriesRouter);
 
 
 // We have to use error handler after routes!
