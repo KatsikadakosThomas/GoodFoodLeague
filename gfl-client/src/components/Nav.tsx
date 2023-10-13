@@ -38,7 +38,7 @@ export default function Nav( {openModal,opened}:NavProps){
 
           <div className=" mr-8 hidden md:flex">
           <Socials color="black"></Socials>
-          <Link  className="text-gfl-red font-bold text-3xl " href={"/login"}>
+          <Link  className="text-gfl-red font-bold text-3xl hover:text-black " href={"/login"}>
            Login
             </Link>
           </div>

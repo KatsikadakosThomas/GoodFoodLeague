@@ -25,7 +25,7 @@ export default function Modal({ openModal, opened }:ModalProps) {
 
     <div
       id="modal"
-      className={`bg-gfl-red flex items-center justify-center w-screen h-full bg-tech  z-[50] fixed top-[20px] left-[0px] right-0 m-0 block ${opened ? "modalAnimationClose" : "modalAnimation"
+      className={`bg-gfl-red flex items-center justify-center w-screen h-[93vh] bg-tech  z-[50] fixed top-[60px] left-[0px] right-0 m-0 block ${opened ? "modalAnimationClose openModal" : "modalAnimation "
         }`}
     >
 
