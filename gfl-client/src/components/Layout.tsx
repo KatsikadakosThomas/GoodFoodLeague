@@ -18,8 +18,10 @@ export default function Layout({children}:LayoutProps){
 
     return(
     <Fragment>
+       
 <Nav openModal={openModal} opened={open}></Nav>
 <Modal openModal={openModal} opened={open}></Modal>
+
 {children}
 </Fragment>
     )

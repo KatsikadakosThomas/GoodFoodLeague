@@ -2,21 +2,12 @@
 import Link from 'next/link';
 import { useState } from 'react';
 import Socials from './Socials';
+import links from "../constants/MenuLinks"
 
 type ModalProps={
     openModal:()=>void,
     opened:boolean;
 }
-
-const links = [
-
-  { href: "/", name: "Home" },
-  // { href: "/agency", name: "Agency" },
-  { href: "/resume", name: "Resume" },
-  { href: "/about", name: "About" },
-  { href: "/contact", name: "Contact" },
-//   { href: "/contact", name: "Contact" }
-]
 
 // const subLinks=[
 //   {href:"/WebDevelopment",name:" Web Development"},
@@ -34,15 +25,15 @@ export default function Modal({ openModal, opened }:ModalProps) {
 
     <div
       id="modal"
-      className={`bg-gfl-red flex items-center justify-center w-screen h-[92vh] bg-tech  z-50 fixed top-[8vh] left-[0px] right-0 m-0 block ${opened ? "modalAnimationClose" : "modalAnimation"
+      className={`bg-gfl-red flex items-center justify-center w-screen h-full bg-tech  z-[50] fixed top-[20px] left-[0px] right-0 m-0 block ${opened ? "modalAnimationClose" : "modalAnimation"
         }`}
     >
 
-      <div className='w-1/2 md:w-1/4'>
+      <div className='w-2/3 md:w-1/4'>
         <ul className="font-extrabold text-neutral-200 text-4xl xs:text-5xl list-none ">
           {links.map((link,idx) => {
             return(
-            <li key={`${link.name}-${idx}`} className={`mb-2 item${idx+1} ${opened ? "" : "slide"}`}  >
+            <li key={`${link.name}-${idx}`} className={`mb-2 item${idx+1} ${opened ? "" : "slide"} ${link.name=="My reviews"?"mt-5":""}`}  >
             <Link className="text-white " onClick={openModal}href={link.href}>
             {link.name}
             </Link>
