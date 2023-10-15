@@ -29,7 +29,7 @@ export default function Nav( {openModal,opened}:NavProps){
       <div id="nav-link-wrapper" className="hidden md:flex">
           {links.map((link,idx) => {
             return(
-            <Link key={idx} className="text-slate-800 font-bold text-3xl mr-5 hover:opacity-70" onClick={openModal}href={link.href}>
+            <Link key={idx} className="text-slate-800 font-bold text-xl mr-5 hover:opacity-70" onClick={openModal}href={link.href}>
             {link.name}
             </Link>
             )

@@ -8,7 +8,7 @@ export default function Socials({color}:props) {
 
     return (
   
-      <div className="flex flex-row">
+      <div className="flex flex-row items-center">
         <a id="tiktok" href="https://www.tiktok.com/@technaturegr?lang=en" target="_blank" rel="noopener noreferrer" >
           <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" className={`w-[35px] xs:w-[40px] h-[35px] xs:h-[40px]  mr-4  hover:rotate-45 transition-all duration-300`} >
             <g clipPath="url(#clip0_201_43)" className={`fill-${color} `}>
